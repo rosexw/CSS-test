@@ -11,7 +11,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 /* Style the items inside the navigation bar */
@@ -19,6 +19,10 @@
   float: left;
   text-align: center;
   text-decoration: none;
+}
+
+.navbar .nav-mobile {
+  display: none;
 }
 
 .navbar .brand-logo .logo-image {
@@ -176,7 +180,9 @@ header h4 {
   padding-left: 5px;
 }
 
+/*TABLET*/
 /*Tablet has max-width 1024px*/
+/*Tablet has all the same features as desktop plus the ones below*/
 @media (max-width: 1024px) {
   .result {
     width: calc(50% - 10px);
@@ -203,13 +209,70 @@ header h4 {
     font-size: 14px;
     color: #333333;
   }
+  .navbar .brand-logo {
+
+  }
+  .navbar .nav-desktop {
+    display: none;
+  }
+  .navbar .nav-mobile {
+    display: block;
+    background-color: #40c18f;
+    width: 50%;
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    padding: 30px;
+    text-align: left;
+    -ms-transform: translateX(-100%); /* IE 9 */
+    -webkit-transform: translateX(-100%); /* Safari */
+    transform: translateX(-100%);
+    transition: all 0.5s;
+  }
+  /*hover menu open*/
+  .navbar a:hover + .nav-mobile, .nav-mobile:hover {
+    -ms-transform: translateX(0%); /* IE 9 */
+    -webkit-transform: translateX(0%); /* Safari */
+    transform: translateX(0%);
+  }
+  .navbar .brand-logo:hover .fade, .nav-mobile:hover + .fade {
+    opacity: 0.7;
+  }
+
+  /*Gray/fade rest out when the menu is hovered upon*/
+  .fade {
+    position: fixed;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 50px;
+    left: 50%;
+    z-index: 1;
+    background-color: black;
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  .navbar .nav-mobile a {
+    font-size: 20px;
+  }
+  .navbar .nav-mobile p {
+    padding-bottom: 20px;
+  }
 }
 
+/*MOBILE*/
 /*Mobile has max-width 767px*/
+/*Mobile has all the same features as desktop and tablet, plus the changes below*/
 @media (max-width: 767px) {
   .result {
     width: calc(100% - 10px);
     height: 230px;
+  }
+  .navbar .nav-mobile {
+    width: 100%;
   }
 }
 
