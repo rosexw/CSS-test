@@ -76,6 +76,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /*text shadow for the two headers as requested*/
   text-shadow: black 1px 0 10px;
   position: relative;
   margin-top: 50px;
@@ -99,19 +100,45 @@ header h4 {
 }
 
 .results {
-  margin: 40px 5px;
+  margin: 40px auto;
+  /*desktop max width is 1440px, other than that, margin above centers it*/
+  max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
 }
+
+/*three columns in desktop mode*/
 .result {
   width: calc(33% - 10px);
   height: 120px;
-  background: url(images/results/90Chn1wgm_M.jpg);
-  background-size: cover;
-  background-position: center;
   margin: 5px;
   color: white;
   position: relative;
+  display: inline-block;
+}
+
+.result .img-container {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+/*child class is result-img, make sure when zoomed, it doesn't go beyond the parent box*/
+/*Also, zoom animation, below*/
+.result .result-img{
+  width: 100%;
+  height: 100%;
+  background: url(images/results/90Chn1wgm_M.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all .5s ease-in-out;
+}
+.result:hover .result-img,
+.result:focus .result-img {
+  transform: scale(1.2);
+  display: block;
+  overflow: hidden;
 }
 
 .result:after {
@@ -122,31 +149,69 @@ header h4 {
   top: 0;
   left: 0;
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(57,80,86,0.9) 100%);
+  /*grey fade in for the link and text*/
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 40%,rgba(57,80,86,1) 100%);
+  display: block;
 }
 
-.result a {
-  color: white;
-  position: absolute;
-  bottom: 25px;
-  font-size: 12px;
-  padding-left: 5px;
-  z-index: 2;
-}
-
-.result p {
-  font-size: 8px;
+/*Make the link and text of results remain on the bottom and white*/
+.result .text {
   position: absolute;
   bottom: 0;
-  padding-left: 5px;
   z-index: 2;
 }
 
-/*@media
-{
-result tablet width: 50%;
-result mobile width: 100%;
-}*/
+.result .text a {
+  color: white;
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.result .text a:hover {
+  color: yellow;
+}
+
+.result .text p {
+  font-size: 8px;
+  padding-left: 5px;
+}
+
+/*Tablet has max-width 1024px*/
+@media (max-width: 1024px) {
+  .result {
+    width: calc(50% - 10px);
+    height: 230px;
+    margin-bottom: 180px;
+  }
+  .result:after {
+    display: none;
+  }
+  .result .text {
+    background-color: #D3D3D3;
+    height: 160px;
+    left: 0;
+    right: 15px;
+    bottom: -170px;
+    padding: 15px;
+  }
+  .result .text a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+  }
+  .result .text p {
+    font-size: 14px;
+    color: #333333;
+  }
+}
+
+/*Mobile has max-width 767px*/
+@media (max-width: 767px) {
+  .result {
+    width: calc(100% - 10px);
+    height: 230px;
+  }
+}
 
 /*The blue-purple footer with Copyright*/
 footer {
@@ -158,5 +223,6 @@ footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /*gives a red text shadow as examples shows*/
   text-shadow: red 1px 0 10px;
 }
