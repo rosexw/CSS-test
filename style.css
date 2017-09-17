@@ -5,7 +5,7 @@
 
 /*top green navigation bar*/
 .navbar {
-  background-color: #00e68e;
+  background-color: #40c18f;
   overflow: hidden;
   text-decoration: none;
   position: fixed;
@@ -29,7 +29,6 @@
   display: inline-block;
   text-align: center;
   padding: 12px;
-  font-size: 14px;
   list-style-type: none;
   text-decoration: none;
 }
@@ -37,6 +36,8 @@
 .navbar a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
 }
 
 .navbar .right {
@@ -66,17 +67,27 @@ body {
 /*This is the hero background image portion, taking the full screen when at normal stage*/
 header {
   background: url(images/bg.jpg);
-  color: white;
+  background-position: center;
   background-size: cover;
+  color: white;
+  text-align: center;
   height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-shadow: black 1px 0 10px;
-  font-weight: lighter;
   position: relative;
   margin-top: 50px;
+}
+
+header h1 {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+header h4 {
+  font-weight: lighter;
 }
 /*The red see results text to scroll down*/
 .see-results {
@@ -86,11 +97,62 @@ header {
   font-weight: bold;
   text-shadow: red 1px 0 10px;
 }
+
+.results {
+  margin: 40px 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.result {
+  width: calc(33% - 10px);
+  height: 120px;
+  background: url(images/results/90Chn1wgm_M.jpg);
+  background-size: cover;
+  background-position: center;
+  margin: 5px;
+  color: white;
+  position: relative;
+}
+
+.result:after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(57,80,86,0.9) 100%);
+}
+
+.result a {
+  color: white;
+  position: absolute;
+  bottom: 25px;
+  font-size: 12px;
+  padding-left: 5px;
+  z-index: 2;
+}
+
+.result p {
+  font-size: 8px;
+  position: absolute;
+  bottom: 0;
+  padding-left: 5px;
+  z-index: 2;
+}
+
+/*@media
+{
+result tablet width: 50%;
+result mobile width: 100%;
+}*/
+
 /*The blue-purple footer with Copyright*/
 footer {
-  background-color: #5a1dd2;
+  background-color: #682cdf;
   color: white;
-  height: 100px;
+  height: 120px;
   font-size: 6px;
   display: flex;
   align-items: center;
