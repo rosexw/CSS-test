@@ -89,10 +89,12 @@ header {
 header h1 {
   font-weight: 500;
   margin-bottom: 0;
+  font-size: 40px;
 }
 
-header h4 {
+header h2 {
   font-weight: lighter;
+  font-size: 18px;
 }
 /*The red see results text to scroll down*/
 .see-results {
