@@ -1,0 +1,100 @@
+/*For everything:*/
+* {
+  font-family: helvetica, sans-serif;
+}
+
+/*top green navigation bar*/
+.navbar {
+  background-color: #00e68e;
+  overflow: hidden;
+  text-decoration: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+/* Style the items inside the navigation bar */
+.navbar .brand-logo {
+  float: left;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar .brand-logo .logo-image {
+  width: 100px;
+}
+
+.navbar li {
+  display: inline-block;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .right {
+  margin-right: 50px;
+}
+
+.navbar .nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+/* Change the color to yellow of links on hover */
+.navbar a:hover {
+  color: yellow;
+}
+/* Add a color to the active/current link */
+.navbar a.active {
+  color: white;
+}
+
+body {
+  margin: 0;
+}
+
+/*This is the hero background image portion, taking the full screen when at normal stage*/
+header {
+  background: url(images/bg.jpg);
+  color: white;
+  background-size: cover;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-shadow: black 1px 0 10px;
+  font-weight: lighter;
+  position: relative;
+  margin-top: 50px;
+}
+/*The red see results text to scroll down*/
+.see-results {
+  position: absolute;
+  bottom: 10px;
+  color: red;
+  font-weight: bold;
+  text-shadow: red 1px 0 10px;
+}
+/*The blue-purple footer with Copyright*/
+footer {
+  background-color: #5a1dd2;
+  color: white;
+  height: 100px;
+  font-size: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-shadow: red 1px 0 10px;
+}
