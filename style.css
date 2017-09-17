@@ -232,13 +232,10 @@ header h4 {
     transition: all 0.5s;
   }
   /*hover menu open*/
-  .navbar a:hover + .nav-mobile, .nav-mobile:hover {
+  .navbar a:hover ~ .nav-mobile, .nav-mobile:hover {
     -ms-transform: translateX(0%); /* IE 9 */
     -webkit-transform: translateX(0%); /* Safari */
     transform: translateX(0%);
-  }
-  .navbar .brand-logo:hover .fade, .nav-mobile:hover + .fade {
-    opacity: 0.7;
   }
 
   /*Gray/fade rest out when the menu is hovered upon*/
@@ -248,11 +245,16 @@ header h4 {
     height: 100%;
     width: 100%;
     top: 50px;
-    left: 50%;
+    left: 0;
     z-index: 1;
     background-color: black;
     transition: all 0.5s;
     opacity: 0;
+    visibility: hidden;
+  }
+  .navbar .brand-logo:hover ~ .fade, .nav-mobile:hover ~ .fade {
+    opacity: 0.7;
+    visibility: visible;
   }
 
   .navbar .nav-mobile a {
