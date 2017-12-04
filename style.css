@@ -5,7 +5,7 @@
 
 /*top green navigation bar*/
 .navbar {
-  background-color: #40c18f;
+  background-color: #5bcb98;
   overflow: hidden;
   text-decoration: none;
   position: fixed;
@@ -219,7 +219,7 @@ header h2 {
   }
   .navbar .nav-mobile {
     display: block;
-    background-color: #40c18f;
+    background-color: ##5bcb98;
     width: 50%;
     z-index: 1000;
     position: fixed;
@@ -282,7 +282,7 @@ header h2 {
 
 /*The blue-purple footer with Copyright*/
 footer {
-  background-color: #682cdf;
+  background-color: #5b48f6;
   color: white;
   height: 120px;
   font-size: 6px;
